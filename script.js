@@ -1,7 +1,6 @@
-//your code here
 // Game Constants
 const gameContainer = document.getElementById('gameContainer');
-const scoreElement = document.getElementById('score');
+const scoreElement = document.getElementById('pointsEarned'); // Updated to use #pointsEarned
 const containerSize = 40;
 const pixelCount = containerSize * containerSize;
 const initialSnakePosition = 780; // 20th row, 1st column -> pixel index = 20 * 40 - 1
@@ -60,18 +59,19 @@ function moveSnake() {
         if (newHead >= pixelCount) newHead -= pixelCount;
     }
 
+    // Check if the snake runs into itself (Game Over)
     if (snake.includes(newHead)) {
         alert("Game Over!");
         clearInterval(gameInterval);
         return;
     }
 
-    snake.unshift(newHead);
+    snake.unshift(newHead); // Add new head position to snake
 
     // Check if snake eats the food
     if (newHead === foodPosition) {
         score++;
-        scoreElement.textContent = score;
+        scoreElement.textContent = score; // Update score
         document.getElementById(`pixel${foodPosition}`).classList.remove('food');
         generateFood();
     } else {
