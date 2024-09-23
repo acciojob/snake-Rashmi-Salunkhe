@@ -1,11 +1,11 @@
 // Game Constants
 const gameContainer = document.getElementById('gameContainer');
-const scoreElement = document.getElementById('pointsEarned'); // Updated to use #pointsEarned
+const scoreElement = document.getElementById('pointsEarned');
 const containerSize = 40;
 const pixelCount = containerSize * containerSize;
-const initialSnakePosition = 780; // 20th row, 1st column -> pixel index = 20 * 40 - 1
+const initialSnakePosition = 780; // Snake starts at 20th row, 1st column
 let snake = [initialSnakePosition]; // Snake starts with one segment
-let direction = 1; // Start moving to the right
+let direction = 1; // Moving right
 let score = 0;
 let foodPosition = null;
 let speed = 100; // Snake moves every 100ms
@@ -73,7 +73,7 @@ function moveSnake() {
         score++;
         scoreElement.textContent = score; // Update score
         document.getElementById(`pixel${foodPosition}`).classList.remove('food');
-        generateFood();
+        generateFood(); // Generate new food
     } else {
         snake.pop(); // Remove tail if not eating food
     }
