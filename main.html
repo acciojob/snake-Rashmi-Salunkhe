@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="scoreBoard">Score: <span id="pointsEarned">0</span></div>
-    <div id="gameContainer"></div>
-    
-    <script src="script.js"></script>
+	<!-- the entire body must be written by student -->
+	<div id="gameContainer"></div>
+
+
+	<!-- #scoreContainer contains the scores -->
+	<div id="scoreContainer">
+		<div class="scoreBoard">Your Score: <span id="pointsEarned">1</span></div>
+	</div>
+
+
+	<!-- #onScreenControllers contains the navigation buttons for mobile screens -->
+	<div id="onScreenControllers">
+		<button id="leftButton">◀</button>
+		<div>
+			<button id="upButton">🔼</button>
+			<button id="downButton">🔽</button>
+		</div>
+		<button id="rightButton">▶</button>
+	</div>
+
+
+	<script type="text/javascript" src="./script.js">
+	</script>
+
 </body>
+
 </html>
